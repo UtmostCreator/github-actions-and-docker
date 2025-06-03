@@ -18,7 +18,7 @@ jobs:
       # MONGODB_CONNECTION_PROTOCOL: mongodb+srv
       MONGODB_CONNECTION_PROTOCOL: mongodb
       # MONGODB_CLUSTER_ADDRESS: cluster0.drpgi23.mongodb.net
-      MONGODB_CLUSTER_ADDRESS: 127.0.0.1:27027 # comes from services.mongodb - only possible if job runs in the container
+      MONGODB_CLUSTER_ADDRESS: 127.0.0.1:27017 # comes from services.mongodb - only possible if job runs in the container
       # MONGODB_USERNAME: ${{ secrets.MONGODB_USERNAME }}
       MONGODB_USERNAME: root
       # MONGODB_PASSWORD: ${{ secrets.MONGODB_PASSWORD }}
@@ -28,7 +28,7 @@ jobs:
       mongodb: # used in env:
         image: mongo
         ports:
-          - 27027:27027
+          - 27017:27017
         env:
           MONGO_INITDB_ROOT_USERNAME: root
           MONGO_INITDB_ROOT_PASSWORD: password

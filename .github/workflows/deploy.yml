@@ -11,6 +11,9 @@ jobs:
   test:
     environment: Testing
     runs-on: ubuntu-latest
+    # container: node:18
+    container:
+      image: node:22-alpine
     env:
       MONGODB_CONNECTION_PROTOCOL: mongodb+srv
       MONGODB_CLUSTER_ADDRESS: cluster0.drpgi23.mongodb.net
